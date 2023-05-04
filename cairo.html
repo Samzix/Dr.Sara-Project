@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Landmarks Slideshow</title>
+    <link rel="stylesheet" href="land_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <a href="main.html" class="home-button"><i class="fas fa-home"></i></a>
+    <div class="slideshow">
+        <div class="slide active" style="background-image: url('pyramids.jpg');">
+            <div class="slide-content">
+                <h2>The Great Pyramids of Giza</h2>
+                <p>The Great Pyramids of Giza are ancient monumental structures located on the outskirts of Cairo. They are the only surviving wonders of the ancient world and are a must-visit when in Cairo.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('cairo_musem.jpg');">
+            <div class="slide-content">
+                <h2>The Egyptian Museum</h2>
+                <p>The Egyptian Museum in Cairo is home to a vast collection of ancient Egyptian artifacts, including the treasures of Tutankhamun. It offers a fascinating insight into the rich history of Egypt.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('cairo-citadel.jpg');">
+            <div class="slide-content">
+                <h2>The Cairo Citadel</h2>
+                <p>The Cairo Citadel is a medieval Islamic fortress that overlooks the city. It houses several mosques, including the impressive Mosque of Muhammad Ali, as well as museums and panoramic views of Cairo.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('cairo-khan.jpg');">
+            <div class="slide-content">
+                <h2>Khan El Khalili Bazaar</h2>
+                <p>Khan El Khalili is a bustling traditional bazaar in the heart of Cairo. It offers a unique shopping experience with a wide range of products, including spices, jewelry, textiles, and traditional crafts.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 6000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

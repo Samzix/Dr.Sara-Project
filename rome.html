@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Landmarks Slideshow</title>
+    <link rel="stylesheet" href="land_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <a href="main.html" class="home-button"><i class="fas fa-home"></i></a>
+    <div class="slideshow">
+        <div class="slide active" style="background-image: url('Colosseum.jpg');">
+            <div class="slide-content">
+                <h2>Colosseum</h2>
+                <p>The Colosseum is an ancient amphitheater located in Rome. It is one of the most iconic landmarks in the city and a magnificent example of Roman architecture.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Trevi_Fountain.jpg');">
+            <div class="slide-content">
+                <h2>Trevi Fountain</h2>
+                <p>The Trevi Fountain is a famous Baroque fountain in Rome. It is known for its stunning design and is considered one of the most beautiful fountains in the world.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Vatican_City.jpg');">
+            <div class="slide-content">
+                <h2>Vatican City</h2>
+                <p>Vatican City is an independent city-state located within Rome. It is the smallest internationally recognized independent state in the world and the spiritual and administrative headquarters of the Roman Catholic Church.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

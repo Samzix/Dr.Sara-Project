@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Landmarks Slideshow</title>
+    <link rel="stylesheet" href="land_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <a href="main.html" class="home-button"><i class="fas fa-home"></i></a>
+    <div class="slideshow">
+        <div class="slide active" style="background-image: url('eiffle.jpg');">
+            <div class="slide-content">
+                <h2>Eiffel Tower</h2>
+                <p>The Eiffel Tower is a wrought-iron lattice tower located on the Champ de Mars in Paris. It is one of the most recognizable landmarks in the world and a symbol of France.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Louvre _Museum.jpg');">
+            <div class="slide-content">
+                <h2>Louvre Museum</h2>
+                <p>The Louvre Museum is the world's largest art museum and a historic monument in Paris. It is home to thousands of works of art, including the famous painting Mona Lisa.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Notre-Dame Cathedral.jpg');">
+            <div class="slide-content">
+                <h2>Notre-Dame Cathedral</h2>
+                <p>Notre-Dame Cathedral is a medieval Catholic cathedral located on the Île de la Cité in Paris. It is known for its Gothic architecture and is considered one of the finest examples in the world.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Landmarks Slideshow</title>
+    <link rel="stylesheet" href="land_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <a href="main.html" class="home-button"><i class="fas fa-home"></i></a>
+    <div class="slideshow">
+        <div class="slide active" style="background-image: url('Sagrada_Familia.jpg');">
+            <div class="slide-content">
+                <h2>Sagrada Familia</h2>
+                <p>The Sagrada Familia is a famous basilica in Barcelona. It is renowned for its unique architectural style, designed by Antoni Gaudí, and has become one of the most recognizable landmarks in the city.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Park_Güell.jpg');">
+            <div class="slide-content">
+                <h2>Park Güell</h2>
+                <p>Park Güell is a public park located on Carmel Hill in Barcelona. It showcases Gaudí's artistic vision and features colorful mosaic work, unique buildings, and beautiful panoramic views of the city.</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('Casa_Batlló.jpg');">
+            <div class="slide-content">
+                <h2>Casa Batlló</h2>
+                <p>Casa Batlló is a modernist building in Barcelona, also designed by Antoni Gaudí. Its striking façade and imaginative design have made it a popular attraction, known for its colorful mosaic tiles and organic shapes.</p>
+            </div>
+        </div>
+         </div>
+             <div class="slide" style="background-image: url('Barcelona_Cathedral.jpg');">
+          <div class="slide-content">
+             <h2>Barcelona Cathedral</h2>
+             <p>The Barcelona Cathedral, officially known as the Cathedral of the Holy Cross and Saint Eulalia, is a Gothic cathedral in the Gothic Quarter of Barcelona. It is known for its impressive architecture and beautiful stained glass windows.</p>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
